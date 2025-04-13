@@ -1,11 +1,7 @@
-import sqlite3
+# ERROR: Authentication failed with Hugging Face API
+# Please check that your API token is valid and has the correct permissions
 
-def get_user_info(username, password):
-    conn = sqlite3.connect('users.db')
-    cursor = conn.cursor()
-    # Vulnerable to SQL Injection
-    query = "SELECT * FROM users WHERE username = '{}' AND password = '{}'".format(username, password)
-    cursor.execute(query)
-    result = cursor.fetchone()
-    conn.close()
-    return result
+# Common solutions:
+# 1. Generate a new token at https://huggingface.co/settings/tokens
+# 2. Ensure the token has read access
+# 3. Set the token as an environment variable named HF_API_TOKEN
