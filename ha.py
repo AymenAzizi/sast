@@ -15,7 +15,7 @@ def login():
     username = request.args.get('username')
     password = request.args.get('password')
 
-    # 🔥 Vulnerable to SQL Injection
+    Vulnerable to SQL Injection
     query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
     print("Running query:", query)
     result = cursor.execute(query).fetchone()
